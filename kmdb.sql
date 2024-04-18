@@ -194,13 +194,11 @@ INSERT INTO characters (character_name, movie_id, actor_id) VALUES
 .print "======"
 .print ""
 
-SELECT movies.movie_id, movies.title, movies.year_released, movies.MPAA_rating, studios.studio_name
-FROM movies movies INNER JOIN studios ON movies.studio_id = studios.studio_id;
- --SELECT Products.Department, Reviews.Product, Reviews.Rating, Reviews.Body
--- FROM Reviews INNER JOIN Products ON Products.ID = Reviews.ProductID
---WHERE Products.Department = "Furniture";
 -- The SQL statement for the movies output
 -- TODO!
+
+SELECT movies.movie_id, movies.title, movies.year_released, movies.MPAA_rating, studios.studio_name
+FROM movies movies INNER JOIN studios ON movies.studio_id = studios.studio_id;
 
 -- Prints a header for the cast output
 .print ""
@@ -211,29 +209,8 @@ FROM movies movies INNER JOIN studios ON movies.studio_id = studios.studio_id;
 
 -- The SQL statement for the cast output
 -- TODO!
-
--- Movies
--- ======
-
--- Batman Begins          2005           PG-13  Warner Bros.
--- The Dark Knight        2008           PG-13  Warner Bros.
--- The Dark Knight Rises  2012           PG-13  Warner Bros.
-
--- Top Cast
--- ========
-
--- Batman Begins          Christian Bale        Bruce Wayne
--- Batman Begins          Michael Caine         Alfred
--- Batman Begins          Liam Neeson           Ra's Al Ghul
--- Batman Begins          Katie Holmes          Rachel Dawes
--- Batman Begins          Gary Oldman           Commissioner Gordon
--- The Dark Knight        Christian Bale        Bruce Wayne
--- The Dark Knight        Heath Ledger          Joker
--- The Dark Knight        Aaron Eckhart         Harvey Dent
--- The Dark Knight        Michael Caine         Alfred
--- The Dark Knight        Maggie Gyllenhaal     Rachel Dawes
--- The Dark Knight Rises  Christian Bale        Bruce Wayne
--- The Dark Knight Rises  Gary Oldman           Commissioner Gordon
--- The Dark Knight Rises  Tom Hardy             Bane
--- The Dark Knight Rises  Joseph Gordon-Levitt  John Blake
--- The Dark Knight Rises  Anne Hathaway         Selina Kyle
+SELECT movies.title, actors.actor_name, characters.character_name
+FROM movies INNER JOIN actors INNER JOIN characters 
+ON movies.movie_id = characters.movie_id and
+actors.actor_id = characters.actor_id
+Order by movies.title;
