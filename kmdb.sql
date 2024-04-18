@@ -146,10 +146,64 @@ CREATE TABLE characters (
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
-Insert Into movies (movie_id, title, year_released, MPAA_rating, studio_id) 
-VALUES (1, "Batman Begins", 2005, "PG-13", 1),
-(2, "The Dark Knight", 2008, "PG-13", 1),
-(3, "The Dark Knight Rises, 2012, "PG-13", 1);
+INSERT INTO movies (movie_id, title, year_released, MPAA_rating, studio_id) VALUES 
+(1, "Batman Begins", 2005, "PG-13", 1),
+(2, "The Dark Knight", 2008, "PG-13", 1), 
+(3, The Dark Knight Rises, 2012, "PG-13", 1);
+
+INSERT INTO studios (studio_id, studio_name) VALUES
+(1, "Warner Bros.")；
+
+INSERT INTO actors (actor_id, actor_name) VALUES
+(1, "Christian Bale"),
+(2, "Michael Caine"),
+(3, "Liam Neeson"),
+(4, "Katie Holmes"),
+(5, "Gary Oldman "),
+(6, "Heath Ledger"),
+(7, "Aaron Eckhart"),
+(8, "Maggie Gyllenhaal"),
+(9, "Tom Hardy"),
+(10, "Joseph Gordon-Levitt"),
+(11, "Anne Hathaway");
+
+INSERT INTO characters (character_name, movie_id, actor_id) VALUES
+("Bruce Wayne", 1, 1),
+("Alfred", 1, 2),
+("Ra's Al Ghul", 1, 3),
+("Rachel Dawes", 1, 4),
+("Commissioner Gordon", 1, 5);
+
+INSERT INTO characters (character_name, movie_id, actor_id) VALUES
+("Bruce Wayne", 2, 1),
+("Joker", 2, 6),
+("Harvey Dent", 2, 7),
+("Alfred", 2, 2),
+("Rachel Dawes", 2, 8);
+
+INSERT INTO characters (character_name, movie_id, actor_id) VALUES
+("Bruce Wayne", 3, 1),
+("Commissioner Gordon", 3, 5),
+("Bane", 3, 9),
+("John Blake", 3, 10),
+("Selina Kyle", 3, 11);
+
+
+-- Batman Begins          Christian Bale        Bruce Wayne
+-- Batman Begins          Michael Caine         Alfred
+-- Batman Begins          Liam Neeson           Ra's Al Ghul
+-- Batman Begins          Katie Holmes          Rachel Dawes
+-- Batman Begins          Gary Oldman           Commissioner Gordon
+-- The Dark Knight        Christian Bale        Bruce Wayne
+-- The Dark Knight        Heath Ledger          Joker
+-- The Dark Knight        Aaron Eckhart         Harvey Dent
+-- The Dark Knight        Michael Caine         Alfred
+-- The Dark Knight        Maggie Gyllenhaal     Rachel Dawes
+-- The Dark Knight Rises  Christian Bale        Bruce Wayne
+-- The Dark Knight Rises  Gary Oldman           Commissioner Gordon
+-- The Dark Knight Rises  Tom Hardy             Bane
+-- The Dark Knight Rises  Joseph Gordon-Levitt  John Blake
+-- The Dark Knight Rises  Anne Hathaway         Selina Kyle
 
 SELECT * FROM movies;
 
