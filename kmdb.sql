@@ -124,7 +124,7 @@ CREATE TABLE movies (
     title TEXT, 
     year_released INTEGER, 
     MPAA_rating TEXT, 
-    studio TEXT
+    studio_id TEXT
 );
 
 CREATE TABLE studios ( 
@@ -138,10 +138,11 @@ CREATE TABLE actors (
 ); 
 
 CREATE TABLE characters (
+    character_id INTEGER PRIMARY KEY AUTOINCREMENT, 
     character_name TEXT,
     movie_id INTEGER,
     actor_id INTEGER
-)
+);
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
@@ -149,10 +150,10 @@ CREATE TABLE characters (
 INSERT INTO movies (movie_id, title, year_released, MPAA_rating, studio_id) VALUES 
 (1, "Batman Begins", 2005, "PG-13", 1),
 (2, "The Dark Knight", 2008, "PG-13", 1), 
-(3, The Dark Knight Rises, 2012, "PG-13", 1);
+(3, "The Dark Knight Rises", 2012, "PG-13", 1);
 
 INSERT INTO studios (studio_id, studio_name) VALUES
-(1, "Warner Bros.")；
+(1, "Warner Bros.");
 
 INSERT INTO actors (actor_id, actor_name) VALUES
 (1, "Christian Bale"),
@@ -188,22 +189,6 @@ INSERT INTO characters (character_name, movie_id, actor_id) VALUES
 ("John Blake", 3, 10),
 ("Selina Kyle", 3, 11);
 
-
--- Batman Begins          Christian Bale        Bruce Wayne
--- Batman Begins          Michael Caine         Alfred
--- Batman Begins          Liam Neeson           Ra's Al Ghul
--- Batman Begins          Katie Holmes          Rachel Dawes
--- Batman Begins          Gary Oldman           Commissioner Gordon
--- The Dark Knight        Christian Bale        Bruce Wayne
--- The Dark Knight        Heath Ledger          Joker
--- The Dark Knight        Aaron Eckhart         Harvey Dent
--- The Dark Knight        Michael Caine         Alfred
--- The Dark Knight        Maggie Gyllenhaal     Rachel Dawes
--- The Dark Knight Rises  Christian Bale        Bruce Wayne
--- The Dark Knight Rises  Gary Oldman           Commissioner Gordon
--- The Dark Knight Rises  Tom Hardy             Bane
--- The Dark Knight Rises  Joseph Gordon-Levitt  John Blake
--- The Dark Knight Rises  Anne Hathaway         Selina Kyle
 
 SELECT * FROM movies;
 
