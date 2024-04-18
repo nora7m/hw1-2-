@@ -134,6 +134,16 @@ CREATE TABLE studios (
     year_released INTEGER 
 );  
 
+CREATE TABLE actors ( 
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    first_name TEXT, 
+    last_name TEXT, 
+    character TEXT, 
+    movie_title TEXT, 
+    year_released INTEGER, 
+    studio TEXT  
+); 
+
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
